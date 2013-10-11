@@ -1,44 +1,28 @@
 var app = app || {};
 
 (function(a) {
-    /*function getAllPlaces(options){
-    httpRequest.getJSON(app.servicesBaseUrl  + "places")
-    .then(function(places){
-    ret
-    });
-    }*/
-    function getAlphabetically() {
-        httpRequest.getJSON(app.servicesBaseUrl  + "places")
+    
+    function getAll() {
+        var locationString = app.latitude + "," + app.longitude;
+        
+        httpRequest.getJSON(app.servicesBaseUrl + locationString + "&oauth_token=XNAW3AJSCISM5YIRV2TXFMF4FI1ZZWX1C4PLITQATS5BJK1X&v=20130926")
         .then(function(places) {
-            viewModel.set("places", places); 
+            viewModel.set("places", places.response.venues); 
             console.log(places);
         });
     }
-    
-    function getByLocation() {
-        cordovaExt.getLocation().
-        then(function(location) {
-            var locationString = location.coords.latitude + "," + location.coords.longitude;            
-            return httpRequest.getJSON(app.servicesBaseUrl  + "places?location=" + locationString);     
-        })
-        .then(function(places) {
-            viewModel.set("places", places); 
-            console.log(places);
-        });
-    }
-    
+      
     var viewModel = kendo.observable({
         places:[],
-        getAlphabetically: getAlphabetically,
-        getByLocation: getByLocation
+        getAll: getAll,
     });
     
     function init(e) {
         kendo.bind(e.view.element, viewModel);
-       getAlphabetically();
+       getAll();
     }   
     
     a.places = {
         init:init          
     };
-}(app));
+}(app));;
