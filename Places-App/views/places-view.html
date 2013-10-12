@@ -7,3 +7,10 @@
     <ul data-role="listview" data-bind="source: places" data-template="place-template">
     </ul> 
 </div>
+
+<script id="place-template" type="text/x-kendo-template">
+    <div>
+        <span class="exercise-name">${name}</span>
+        <a class="position-right button" href="views/detailed-places-view.html?uid=${id}" data-role="button">Map</a>
+    </div>
+</script>

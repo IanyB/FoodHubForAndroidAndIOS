@@ -12,9 +12,21 @@ var app = app || {};
         });
     }
       
+    function showDetail(e) {
+        
+        var data = places;
+        
+        data.fetch(function() {
+            var id = e.view.params.uid;
+            var name = data.at(parseInt(id) - 1);
+            kendo.bind(e.view.element, name, kendo.mobile.ui);
+        });
+    }
+      
     var viewModel = kendo.observable({
         places:[],
         getAll: getAll,
+        showDetail: showDetail
     });
     
     function init(e) {
@@ -25,4 +37,4 @@ var app = app || {};
     a.places = {
         init:init          
     };
-}(app));;
+}(app));
