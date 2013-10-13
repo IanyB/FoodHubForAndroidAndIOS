@@ -1,31 +1,4 @@
-<div id="exercise-detail"
-     data-role="view"
-     data-title="Exercise Details"
-     data-show="app.places.init">
-    <div>
-        <h2 class="center" data-bind="events: {click: showDetail}">Refresh></h2>
-        <table class="exercise-table">
-            <tr>
-                <th>Main Muscle</th>
-                <th>Secondary Muscle</th>
-            </tr>
-            <tr>
-                <td data-bind="text: name"></td>
-                <td data-bind="text: name"></td>
-            </tr>
-        </table>
-    </div>
-</div>
-
-<div id="exercise-description"
-    data-role="modalview"
-    class="description-modal-view">
-    <div class="center">
-        <h2 data-bind="text: name"></h2>
-        <div data-role="scroller" class="description-scroller">
-            <div data-bind="text: description"></div>
-        </div>
-        <br />
-        <a data-click="app.exercises.viewModel.closeDescription" data-role="button">Back</a>
-    </div>
+<!--Location-->
+<div data-role="view" data-init="buildMap" id="map" data-title="Map" data-layout="main-layout">
+    <div id="map_canvas" style="width:100%;"></div>
 </div>

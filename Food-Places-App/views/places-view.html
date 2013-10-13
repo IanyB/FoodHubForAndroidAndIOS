@@ -2,15 +2,15 @@
      data-layout="main-layout" data-title="Places"
      data-show="app.places.init">
     
-    <a data-role="button" data-bind="events: {click: getAll}">Refresh</a>
+    <a data-role="button" data-bind="events: {click: getAll}" style="color: #fff; background-color: #f60; width:85%; heigh:10px; margin-left:4%; margin-top:5%;">Refresh</a>
     
-    <ul data-role="listview" data-bind="source: places" data-template="place-template">
+    <ul data-role="listview" data-bind="source: places" data-template="place-template" data-style="inset" style="margin-top:5%;">
     </ul> 
 </div>
 
 <script id="place-template" type="text/x-kendo-template">
-    <div>
-        <span class="exercise-name">${name}</span>
-        <a class="position-right button" href="views/detailed-places-view.html?uid=${id}" data-role="button">Map</a>
+    <div style="text-align:right; background-color: rgb(51, 181, 229); font-size:14px; border:1px solid white; border-radius:5px; padding:2%">
+        <span class="place-name">${name}</span>
+        <a data-role="button" href="views/detailed-places-view.html?uid=${id}" style="background-color: rgb(255, 102, 0);">Details</a>
     </div>
 </script>

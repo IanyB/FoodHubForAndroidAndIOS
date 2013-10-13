@@ -6,28 +6,38 @@
         <link href="kendo/styles/kendo.common.min.css" />
         <link href="kendo/styles/kendo.default.min.css" />
         <link href="kendo/styles/kendo.mobile.all.min.css" rel="stylesheet" />
-        <link href="styles/app.css" />
 
         <script src="cordova.js"></script>
         <script src="kendo/js/jquery.min.js"></script>
         <script src="kendo/js/kendo.all.min.js"></script>
         <script src="scripts/libs/rsvp.min.js"></script>
+        <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCG4jUolof0jhqQu0j1aNqSWfW_ms-wRKg&sensor=true"></script>
         <script src="scripts/app/http-request.js"></script>
         <script src="scripts/app/extensions.js"></script>
         <script src="scripts/app/places.js"></script>
         <script src="scripts/app/location-map.js"></script>
+        <script src="scripts/app/detailed-places.js"></script>
         <script src="scripts/app.js"></script>
-    }
+        
+        <style>
+            #map .km-content,
+            #map .km-scroll-container,
+            #map #map_canvas {
+                display: -webkit-box;
+                width: 100%;
+            }
+        </style>
+        <link href="styles/app.css" />
     </head>
     <body>
         <div id="home-view" data-id="home-view" data-role="view"
-             data-layout="main-layout" data-title="Home">
+             data-layout="home-layout" data-title="Home">
                 <h1>Welcome to FoodHub!</h1>
                 <p>
                     Car rental service is here to help you choose the rent car taht suits you best!
                 </p>
-                <img src="styles/images/MainPageLogo.png" style="width:280px;padding:20px"/>
-                <a href="views/places-view.html" data-role="button" class="button dh" id="watchButton" style="background-color: darkred; color: white; height:30px; left:50px; width:200px; padding:10px;">Find All Nearby Food Places</a>
+                <img src="styles/images/MainPageLogo.png" style="width:100%;"/>
+                <a href="views/places-view.html" data-role="button" class="button dh" id="watchButton" style="color: #fff; text-align:center; background-color: #f60; font-weight:bold; font-size:18px; height:20%; left:6%; width:67%; margin-top:10%; margin-left:5%;">Nearby Food Places</a>
             
         		<div class="content">
         			<div class="result-area ch70">
@@ -42,17 +52,33 @@
         <div data-role="layout" id="main-layout" data-id="main-layout">
             <header data-role="header">
                 <div data-role="navbar">
+                    <a class="nav-button" data-align="left" data-role="backbutton" style="color: #fff; background-color: #f60;">Back</a>
                     <span data-role="view-title"></span>
                 </div>
+                <span data-role="view-title"></span>
             </header>
             <footer data-role="footer">
                 <div data-role="tabstrip">
                     <a href="#home-view" data-icon="home">Home</a>
                     <a href="views/places-view.html#places-view" data-icon="info">Food Places</a>
-                    <a href="views/contacts-view.html#contacts-view.html" data-icon="contacts">Contacs</a>
+                    <a href="views/contacts-view.html#contacts-view.html" data-icon="contacts" >About</a>
                 </div>
             </footer>
         </div>
         
+        <div data-role="layout" id="home-layout" data-id="home-layout">
+            <header data-role="header">
+                <div data-role="navbar">
+                    <span data-role="view-title"></span>
+                </div>
+                <span data-role="view-title"></span>
+            </header>
+            <footer data-role="footer">
+                <div data-role="tabstrip">
+                    <a href="#home-view" data-icon="home">Home</a>
+                    <a href="views/contacts-view.html#contacts-view.html" data-icon="contacts">About</a>
+                </div>
+            </footer>
+        </div>
     </body>
 </html>

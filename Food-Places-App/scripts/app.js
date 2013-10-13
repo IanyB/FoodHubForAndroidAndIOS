@@ -4,8 +4,12 @@ var app = app || {};
     
     document.addEventListener("deviceready", function() {
         
-    app.servicesBaseUrl = "https://api.foursquare.com/v2/venues/search?ll=";
-        //app.servicesBaseUrl = "http://the-places.apphb.com/api/";
+        app.servicesBaseUrl = "https://api.foursquare.com/v2/venues/search?ll=";
+        app.DBSaved;
+        app.SelectedItemLongitude;
+        app.SelectedItemLatitude;
+        app.SelectedItemTitle;
+        app.index;
 	    geolocationApp = new geolocationApp();
         geolocationApp.run();
         var kendoApp = new kendo.mobile.Application(document.body);
@@ -67,8 +71,10 @@ var app = app || {};
     	_onSuccess:function(position) {
             
             
-            app.longitude = position.coords.longitude.substr(0,5);
-            app.latitude = position.coords.latitude.substr(0,5);      
+            //app.longitude = position.coords.longitude.substr(0,5);
+            //app.latitude = position.coords.latitude.substr(0,5);   
+            app.longitude = position.coords.longitude;
+            app.latitude = position.coords.latitude;     
             
     		// Successfully retrieved the geolocation information. Display it all.
             

@@ -1,39 +1,44 @@
-<div id="place-detail"
+<div id="place-detailed"
      data-role="view"
      data-title="Food Place Details"
-     data-show="app.places.viewModel.showDetail">
-    <div>
-        <h2 class="center" data-bind="text: name"></h2>
-        <table class="exercise-table">
-            <tr>
-                <th>Main Muscle</th>
-                <th>Secondary Muscle</th>
-            </tr>
-            <tr>
-                <td data-bind="text: mainMuscles"></td>
-                <td data-bind="text: secondaryMuscles"></td>
-            </tr>
-        </table>
-        <div class="center" >
-            <br />
-            <img data-bind="attr: { src: image }" />
-            <br />
-            <div id="description-container" data-bind="attr: { data-description: id }">
-                <a data-role="button" data-click="app.exercises.viewModel.showDescription">Description</a>
-            </div>
+     data-show="showDetail"
+     data-style="inset"
+     data-layout="main-layout">
+    
+    <h2 data-bind="text: data.name"></h2>
+    <div ata-style="inset" style="margin-top:5%; margin-left:5%;">
+        <div style="padding:2%; background-color: #33B5E5;">
+            <span>Type: </span>
+            <span data-bind="text: data.categories[0].pluralName"></span>
+        </div>
+        <div style="padding:2%;">
+            <span>Phone: </span>
+            <span data-bind="text: data.contact.formattedPhone"></span>
+        </div>
+        <div style="padding:2%; background-color: #33B5E5;">
+            <span>Postal Code: </span>
+            <span data-bind="text: data.location.postalCode"></span>
+        </div>
+        <div style="padding:2%;">
+            <span>Address: </span>
+            <span data-bind="text: data.location.address"></span>
+        </div>
+        <div style="padding:2%; background-color: #33B5E5;">
+            <span>URL: </span>
+            <span data-bind="text: data.location.url"></span>
+        </div>
+        <div style="padding:2%;">
+            <span>Distance: </span>
+            <span data-bind="text: data.location.distance"></span>
+        </div>
+        <div style="padding:2%; background-color: #33B5E5;">
+            <span>City: </span>
+            <span data-bind="text: data.location.city"></span>
+        </div>
+        <div style="padding:2%;">
+            <span>Country: </span>
+            <span data-bind="text: data.location.country"></span>
         </div>
     </div>
-</div>
-
-<div id="exercise-description"
-    data-role="modalview"
-    class="description-modal-view">
-    <div class="center">
-        <h2 data-bind="text: name"></h2>
-        <div data-role="scroller" class="description-scroller">
-            <div data-bind="text: description"></div>
-        </div>
-        <br />
-        <a data-click="app.exercises.viewModel.closeDescription" data-role="button">Back</a>
-    </div>
+    <a class="position-right button" href="views/location-map-view.html" data-role="button"  style="color: #fff; background-color: #f60; width:85%; font-size:14px; heigh:10px; margin-left:4%; margin-top:5%;" >Map</a>
 </div>
