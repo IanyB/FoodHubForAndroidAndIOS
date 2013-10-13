@@ -50,7 +50,7 @@ var app = app || {};
     			navigator.geolocation.clearWatch(that._watchID);
     			that._watchID = null;
                              
-    			button.innerHTML = "Start Geolocation Watch";
+    			button.innerHTML = "Nearby Food Places";
     		}
     		else {
     			that._setResults("Waiting for geolocation information...");
@@ -64,7 +64,7 @@ var app = app || {};
     			}, function() {
     				that._onError.apply(that, arguments);
     			}, options);
-    			button.innerHTML = "Clear Geolocation Watch"; 
+    			button.innerHTML = "Nearby Food Places"; 
     		}
     	},
         

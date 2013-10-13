@@ -4,7 +4,7 @@ function buildMap(e) {
       var mapMarker;    
       var lat = app.SelectedItemLatitude;
       var lon = app.SelectedItemLongitude;
-      var name = app.SelectedItemTitle;
+      var name = window.localStorage.getItem("selectedItemName");
       var mapElement = $("#map_canvas");
       var container = e.view.content;
     

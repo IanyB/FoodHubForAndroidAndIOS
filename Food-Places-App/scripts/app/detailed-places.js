@@ -13,7 +13,8 @@ function showDetail (e) {
         {
             var model  = newDt[i];
             viewModel.set("data", model);
-            app.SelectedItemTitle = model.name;
+            window.localStorage.setItem("selectedItemName", model.name);
+            //app.SelectedItemTitle = model.name;
             app.SelectedItemLongitude = model.location.lng;
             app.SelectedItemLatitude = model.location.lat;
             console.log(model);
