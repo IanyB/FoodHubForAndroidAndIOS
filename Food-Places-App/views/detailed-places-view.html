@@ -4,9 +4,11 @@
      data-show="showDetail"
      data-style="inset"
      data-layout="main-layout">
-    
-    <h2 data-bind="text: data.name"></h2>
-    <div ata-style="inset" style="margin-top:5%; margin-left:5%;">
+    <span style="margin-left:5%; width:90%;">
+        <img src='styles/images/food-place-con.png' style="margin-top:5%;"/>
+        <h2 data-bind="text: data.name" style='display:inline;'></h2>
+    </span>
+    <div ata-style="inset" style="margin-top:5%; margin-left:5%; width:90%;">
         <div style="padding:2%; background-color: #33B5E5;">
             <span>Type: </span>
             <span data-bind="text: data.categories[0].pluralName"></span>
